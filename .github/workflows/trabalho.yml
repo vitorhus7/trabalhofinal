@@ -1,5 +1,6 @@
 name: TrabalhoFinal
 
+
 on:
   push:
     branches:
@@ -18,6 +19,10 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Install dependencies
+        run: |
+          cd cypress
+          npm install
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
